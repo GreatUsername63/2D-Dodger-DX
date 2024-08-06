@@ -13,8 +13,9 @@ public class MoveRed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int speedRNG = Random.Range(0,3);
-        if(speedRNG >= 2){
+        int speedRNG = Random.Range(0, 3);
+        if (speedRNG >= 2)
+        {
             speed += 8f;
         }
 
@@ -25,15 +26,18 @@ public class MoveRed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!gameManager.isGameActive) return;
+        if (!gameManager.isGameActive) return;
         transform.Translate(Vector3.left * speed * Time.deltaTime);
-        if(transform.position.x <= limit){
-            Destroy(gameObject);
+        if (transform.position.x <= limit)
+        {
+            DestroyAndRegenerate();
         }
     }
 
     //Destroy and spawn a new one in it's place
-    private void OnDestroy() {
+    private void DestroyAndRegenerate()
+    {
         spawnerReference.SpawnRoid(true);
+        Destroy(gameObject);
     }
 }

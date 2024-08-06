@@ -26,12 +26,13 @@ public class MoveBlue : MonoBehaviour
         if(!gameManager.isGameActive) return;
         transform.Translate(Vector3.back * speed * Time.deltaTime);
         if(transform.position.z <= limit){
-            Destroy(gameObject);
+            DestroyAndRegenerate();
         }
     }
 
     //Destroy and spawn a new one in it's place
-    private void OnDestroy() {
+    private void DestroyAndRegenerate(){
         spawnerReference.SpawnRoid(false);
+        Destroy(gameObject);
     }
 }
