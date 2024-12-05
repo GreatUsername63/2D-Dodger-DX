@@ -32,7 +32,7 @@ public class Invecibility : MonoBehaviour
     [SerializeField] float powerupTime = 10f;
     //Time when the ships will become almost white
     float warningBeforeDeactivate;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,25 +54,28 @@ public class Invecibility : MonoBehaviour
     void Update()
     {
         //Ascending spike
-        if(isActive&&!isActiveLastFrame){
+        if (isActive && !isActiveLastFrame)
+        {
             //Randomize hue so that both roids don't get the same color
-            rainbowHue = Random.Range(0f,1f);
+            rainbowHue = Random.Range(0f, 1f);
             //Start timer
             activationTime = Time.realtimeSinceStartup;
             audioManager.PlayInvencibilityTheme();
         }
-        if(isActive){
+        if (isActive)
+        {
             //If limit value has been passed, loop the color
-            if(rainbowHue>1){
+            if (rainbowHue > 1)
+            {
                 rainbowHue = 0;
             }
             //Set the colors to material
-            mt.color = Color.HSVToRGB(rainbowHue,colorSaturation,1);
+            mt.color = Color.HSVToRGB(rainbowHue, colorSaturation, 1);
             //Set color to line renderers
-            colorKeys[0].color = Color.HSVToRGB(rainbowHue,colorSaturation,1);
-            colorKeys[1].color = Color.HSVToRGB(rainbowHue,colorSaturation,1);
+            colorKeys[0].color = Color.HSVToRGB(rainbowHue, colorSaturation, 1);
+            colorKeys[1].color = Color.HSVToRGB(rainbowHue, colorSaturation, 1);
             Gradient newGradient = new Gradient();
-            newGradient.SetKeys(colorKeys,alphaKeys);
+            newGradient.SetKeys(colorKeys, alphaKeys);
             lineRenderer1.colorGradient = newGradient;
             lineRenderer2.colorGradient = newGradient;
             //Increase hue by speed
@@ -80,23 +83,26 @@ public class Invecibility : MonoBehaviour
 
             //Check if enough time has passed
             float timePassed = Time.realtimeSinceStartup - activationTime;
-            if(timePassed > powerupTime){
+            if (timePassed > powerupTime)
+            {
                 isActive = false;
             }
             //Change the saturation of the material so it turns white just before returning to normal
-            if(timePassed > warningBeforeDeactivate){
+            if (timePassed > warningBeforeDeactivate)
+            {
                 colorSaturation = 0.1f;
             }
         }
         //Descending spike
-        if(!isActive&&isActiveLastFrame){
+        if (!isActive && isActiveLastFrame)
+        {
             //Return the material and line renderers to normal
             mt.color = originalColor;
             lineRenderer1.colorGradient = originalLinerendererGradient;
             lineRenderer2.colorGradient = originalLinerendererGradient;
             //Return the saturation to max for the next time powerup gets picken up
             colorSaturation = 1f;
-            audioManager.PlayGameTheme();
+            audioManager.PlayGameThemeSkipIntro();
         }
         isActiveLastFrame = isActive;
     }
