@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    bool isGameOver;
     public AudioSource audioSource;
     [SerializeField] AudioClip gameTheme;
     [SerializeField] AudioClip invencibilityTheme;
@@ -15,12 +16,13 @@ public class AudioManager : MonoBehaviour
     {
         audioSource = gameObject.GetComponent<AudioSource>();
         beatTime = 60 / bpm;
+        isGameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!audioSource.isPlaying)
+        if (!audioSource.isPlaying && !isGameOver)
         {
             audioSource.Play();
             if (audioSource.clip == gameTheme)
@@ -54,6 +56,7 @@ public class AudioManager : MonoBehaviour
 
     public void StopGameMusic()
     {
+        isGameOver = true;
         audioSource.Stop();
         audioSource.PlayOneShot(gameoverSound);
     }
