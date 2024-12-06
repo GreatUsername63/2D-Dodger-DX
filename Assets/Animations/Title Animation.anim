@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Slide title up animation
+  m_Name: Title Animation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,9 +22,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -546
+        value: -800
         inSlope: 0
-        outSlope: 136.5
+        outSlope: 200
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -32,11 +32,11 @@ AnimationClip:
       - serializedVersion: 3
         time: 4
         value: 0
-        inSlope: 136.5
-        outSlope: 0
-        tangentMode: 69
+        inSlope: 60.954754
+        outSlope: 60.954754
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.0804196
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -87,9 +87,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -546
+        value: -800
         inSlope: 0
-        outSlope: 136.5
+        outSlope: 200
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -97,11 +97,11 @@ AnimationClip:
       - serializedVersion: 3
         time: 4
         value: 0
-        inSlope: 136.5
-        outSlope: 0
-        tangentMode: 69
+        inSlope: 60.954754
+        outSlope: 60.954754
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.0804196
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2

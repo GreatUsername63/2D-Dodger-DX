@@ -1983,7 +1983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1127670393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2686,8 +2686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b428c7ba0b745348949e5e0a15fbfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1096813}
-  gameOverMessage: {fileID: 692464403}
   isGameStarted: 0
   isGameActive: 0
   isGameOver: 0
@@ -2695,8 +2693,14 @@ MonoBehaviour:
   transition: {fileID: 352901026}
   scoreTextGameobject: {fileID: 1096811}
   startTextGameobject: {fileID: 813474910}
+  startText: {fileID: 813474912}
+  scoreText: {fileID: 1096813}
+  gameOverMessage: {fileID: 692464403}
   finalScoreText: {fileID: 511185594}
   highScoreText: {fileID: 2006142329}
+  bpm: 180.738
+  offset: 0
+  timeBeforeSongStart: 0.5
 --- !u!4 &1505038131
 Transform:
   m_ObjectHideFlags: 0
@@ -3014,9 +3018,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfeed91cf70a8fc4bbc0ed57d6547699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   gameTheme: {fileID: 8300000, guid: 3480634672ebbfa4799eb22cdd87bf24, type: 3}
   invencibilityTheme: {fileID: 8300000, guid: ada97d3ff8501ca49b17acd500260256, type: 3}
   gameoverSound: {fileID: 8300000, guid: 58c89b5dfe91a9f4cb9addfecb02a8d3, type: 3}
+  bpm: 180.738
 --- !u!82 &1826066837
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3031,7 +3037,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
