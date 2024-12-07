@@ -37,7 +37,8 @@ public class MoveRed : MonoBehaviour
     //Destroy and spawn a new one in it's place
     private void DestroyAndRegenerate()
     {
-        spawnerReference.SpawnRoid(true);
+        spawnerReference.SpawnRoid(false);
+        spawnerReference.decreaseRoidCount(false);
         Destroy(gameObject);
     }
 }

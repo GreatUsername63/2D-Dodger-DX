@@ -11,7 +11,10 @@ public class SpawnManager : MonoBehaviour
     public GameObject powerupRed;
     public GameObject powerupBlue;
 
-
+    //Debug
+    public float redCount = 0;
+    public float blueCount = 0;
+    public float totalCount = 0;
 
     private float spawnMinHeight = 12f;
     private float spawnAddedHeight = 48f;
@@ -21,77 +24,99 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 11; i++){
+        for (int i = 0; i < 11; i++)
+        {
             SpawnRoid(true);
             SpawnRoid(false);
         }
-        InvokeRepeating("spawnPowerup",20f,30f);
+        InvokeRepeating("spawnPowerup", 20f, 30f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //Spawns a roid
     //Dim: false equals red, true equals blue
-    public void SpawnRoid(bool dim){
-        if(!isSpawnerActive){
+    public void SpawnRoid(bool dim)
+    {
+        if (!isSpawnerActive)
+        {
             return;
         }
 
-        float randomSpawnCoord = Random.Range(-spawnRange,spawnRange-1);
+        float randomSpawnCoord = Random.Range(-spawnRange, spawnRange - 1);
 
         //Decide at what height to spawn it
-        float spawnHeight = spawnMinHeight + Random.Range(0,spawnAddedHeight);
-        
+        float spawnHeight = spawnMinHeight + Random.Range(0, spawnAddedHeight);
+
         //Determines if the new roid should be big or not
         bool isBig = false;
-        if(Random.Range(1,11) > 9){
+        if (Random.Range(1, 11) > 9)
+        {
             isBig = true;
         }
 
         //if(!dim&&!isBig) then use the red roid
         GameObject selectedPrefab = smallRoidRed;
-        if(dim&&!isBig){
+        if (dim && !isBig)
+        {
             selectedPrefab = smallRoidBlue;
         }
-        if(!dim&&isBig){
+        if (!dim && isBig)
+        {
             selectedPrefab = bigRoidRed;
         }
-        if(dim&&isBig){
+        if (dim && isBig)
+        {
             selectedPrefab = bigRoidBlue;
         }
 
-        Vector3 newPosition = new Vector3(spawnHeight,selectedPrefab.transform.position.y,randomSpawnCoord);
-        if(dim){
-            newPosition = new Vector3(randomSpawnCoord,selectedPrefab.transform.position.y,spawnHeight);
+        Vector3 newPosition = new Vector3(spawnHeight, selectedPrefab.transform.position.y, randomSpawnCoord);
+        if (dim)
+        {
+            newPosition = new Vector3(randomSpawnCoord, selectedPrefab.transform.position.y, spawnHeight);
         }
-        
-        Instantiate(selectedPrefab,newPosition,selectedPrefab.transform.rotation);
+
+        Instantiate(selectedPrefab, newPosition, selectedPrefab.transform.rotation);
+        if (dim) blueCount++;
+        if (!dim) redCount++;
+        totalCount++;
     }
 
-    void spawnPowerup(){
-        if(!isSpawnerActive){
+    public void decreaseRoidCount(bool dim)
+    {
+        if (dim) blueCount--;
+        if (!dim) redCount--;
+        totalCount--;
+    }
+
+    void spawnPowerup()
+    {
+        if (!isSpawnerActive)
+        {
             return;
         }
-        int dim = Random.Range(0,2);
-        float randomSpawnCoord = Random.Range(-spawnRange+1,spawnRange);
+        int dim = Random.Range(0, 2);
+        float randomSpawnCoord = Random.Range(-spawnRange + 1, spawnRange);
 
         //Decide at what height to spawn it
         float spawnHeight = spawnMinHeight;
 
         GameObject selectedPrefab = powerupRed;
-        if(dim==1){
+        if (dim == 1)
+        {
             selectedPrefab = powerupBlue;
         }
 
-        Vector3 newPosition = new Vector3(spawnHeight,selectedPrefab.transform.position.y,randomSpawnCoord);
-        if(dim==1){
-            newPosition = new Vector3(randomSpawnCoord,selectedPrefab.transform.position.y,spawnHeight);
+        Vector3 newPosition = new Vector3(spawnHeight, selectedPrefab.transform.position.y, randomSpawnCoord);
+        if (dim == 1)
+        {
+            newPosition = new Vector3(randomSpawnCoord, selectedPrefab.transform.position.y, spawnHeight);
         }
-        
-        Instantiate(selectedPrefab,newPosition,selectedPrefab.transform.rotation);
+
+        Instantiate(selectedPrefab, newPosition, selectedPrefab.transform.rotation);
     }
 }

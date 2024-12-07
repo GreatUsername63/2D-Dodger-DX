@@ -7,12 +7,13 @@ public class MoveBlue : MonoBehaviour
     private float speed = 10f;
     private float limit = -12f; //Coordinate on z to dissapear
     private SpawnManager spawnerReference;
-    private GameManager gameManager; 
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
-    {   
-        int speedRNG = Random.Range(0,3);
-        if(speedRNG >= 2){
+    {
+        int speedRNG = Random.Range(0, 3);
+        if (speedRNG >= 2)
+        {
             speed += 8f;
         }
 
@@ -23,16 +24,19 @@ public class MoveBlue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!gameManager.isGameActive) return;
+        if (!gameManager.isGameActive) return;
         transform.Translate(Vector3.back * speed * Time.deltaTime);
-        if(transform.position.z <= limit){
+        if (transform.position.z <= limit)
+        {
             DestroyAndRegenerate();
         }
     }
 
     //Destroy and spawn a new one in it's place
-    private void DestroyAndRegenerate(){
-        spawnerReference.SpawnRoid(false);
+    private void DestroyAndRegenerate()
+    {
+        spawnerReference.SpawnRoid(true);
+        spawnerReference.decreaseRoidCount(true);
         Destroy(gameObject);
     }
 }

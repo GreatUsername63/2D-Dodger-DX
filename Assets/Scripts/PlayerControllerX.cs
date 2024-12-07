@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//The blue one
 public class PlayerControllerX : MonoBehaviour
 {
     private float speed = 10f;
     private float lowerLimit = -6.5f;
     private float upperLimit = 7.5f;
     GameManager gameManager;
+    SpawnManager spawnManager;
     Invecibility invecibilityScript;
+
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         invecibilityScript = GetComponent<Invecibility>();
     }
 
@@ -23,19 +27,26 @@ public class PlayerControllerX : MonoBehaviour
         ConstrainPlayerPosition();
     }
 
-    void MovePlayer(){
-        if(gameManager.isGameOver) return;
+    void MovePlayer()
+    {
+        if (gameManager.isGameOver) return;
         float horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
     }
 
-    void ConstrainPlayerPosition(){
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x,lowerLimit,upperLimit),transform.position.y,transform.position.z);
+    void ConstrainPlayerPosition()
+    {
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, lowerLimit, upperLimit), transform.position.y, transform.position.z);
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Enemy")){
-            if(invecibilityScript.isActive){
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            if (invecibilityScript.isActive)
+            {
+                spawnManager.SpawnRoid(true);
+                spawnManager.decreaseRoidCount(true);
                 Destroy(other.gameObject);
                 return;
             }
@@ -43,7 +54,8 @@ public class PlayerControllerX : MonoBehaviour
             gameManager.GameOver();
             Destroy(gameObject);
         }
-        if(other.CompareTag("Powerup")){
+        if (other.CompareTag("Powerup"))
+        {
             Debug.Log("X gets power");
             gameManager.startInvencibility(false);
             Destroy(other.gameObject);
