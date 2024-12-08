@@ -29,6 +29,10 @@ public class AudioManager : MonoBehaviour
             {
                 audioSource.time = beatTime * 4;
             }
+            if (audioSource.clip == invencibilityTheme)
+            {
+                audioSource.time = 0;
+            }
         }
     }
 
@@ -37,6 +41,7 @@ public class AudioManager : MonoBehaviour
         audioSource.Stop();
         audioSource.clip = invencibilityTheme;
         audioSource.Play();
+        audioSource.time = 0;
     }
 
     public void PlayGameTheme()
@@ -44,6 +49,7 @@ public class AudioManager : MonoBehaviour
         audioSource.Stop();
         audioSource.clip = gameTheme;
         audioSource.Play();
+        audioSource.time = 0;
     }
 
     public void PlayGameThemeSkipIntro()
