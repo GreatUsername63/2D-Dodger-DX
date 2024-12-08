@@ -1122,6 +1122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1536590768}
+  secret: {fileID: 1360660438}
+  secretString: miprimerachamba
+  secretIndex: 0
 --- !u!4 &1548937157
 Transform:
   m_ObjectHideFlags: 0
