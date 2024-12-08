@@ -39,7 +39,6 @@ public class StartGame : MonoBehaviour
             if (Input.GetKeyDown(currentKey))
             {
                 secretIndex++;
-                Debug.Log(currentKey);
                 if (secretIndex >= secretString.Length)
                 {
                     secret.SetActive(true);
