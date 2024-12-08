@@ -9,7 +9,6 @@ using System;
 public class GameManager : MonoBehaviour
 {
     float scoreTime = 0f;
-    float startGameTimer = 2f;
     SpawnManager spawnManager;
     public bool isGameStarted;
     public bool isGameActive;
