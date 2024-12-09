@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip gameTheme;
     [SerializeField] AudioClip invencibilityTheme;
     [SerializeField] AudioClip gameoverSound;
+    [SerializeField] AudioClip smallExplosionSound;
     public float bpm = 180.738f;
     float beatTime;
     // Start is called before the first frame update
@@ -65,5 +66,10 @@ public class AudioManager : MonoBehaviour
         isGameOver = true;
         audioSource.Stop();
         audioSource.PlayOneShot(gameoverSound);
+    }
+
+    public void PlaySmallExplosionSound()
+    {
+        audioSource.PlayOneShot(smallExplosionSound);
     }
 }

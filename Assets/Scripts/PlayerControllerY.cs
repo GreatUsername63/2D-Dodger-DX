@@ -10,13 +10,16 @@ public class PlayerControllerY : MonoBehaviour
     private float upperLimit = 7.5f;
     GameManager gameManager;
     SpawnManager spawnManager;
+    AudioManager audioManager;
     Invecibility invecibilityScript;
+    public GameObject plusOneText;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         invecibilityScript = GetComponent<Invecibility>();
     }
 
@@ -47,6 +50,9 @@ public class PlayerControllerY : MonoBehaviour
             {
                 spawnManager.SpawnRoid(false);
                 spawnManager.decreaseRoidCount(false);
+                GameObject.Instantiate(plusOneText, gameObject.transform);
+                audioManager.PlaySmallExplosionSound();
+                gameManager.scoreTime += 1;
                 Destroy(other.gameObject);
                 return;
             }

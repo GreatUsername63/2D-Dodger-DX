@@ -287,7 +287,7 @@ Transform:
   - {fileID: 950199405}
   - {fileID: 1793474057}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &160583283
 GameObject:
@@ -427,6 +427,63 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!1001 &167763759
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 549051600903863716, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_Name
+      value: Powerup blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.25449276
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.3330803
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549051600903863720, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
 --- !u!1 &352901023
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +678,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &481411505
 GameObject:
@@ -722,7 +779,7 @@ Transform:
   - {fileID: 160583284}
   - {fileID: 1926185919}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &481411510
 Rigidbody:
@@ -752,6 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb3526e6e9d7ae4cb812a4448d9fd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plusOneText: {fileID: 4762738211263649242, guid: 7215ff8bb3171ac42ad66d0b2bec1698, type: 3}
 --- !u!114 &481411512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,7 +1259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 36.353, y: -31.999, z: -31.999}
 --- !u!1 &722833231
 GameObject:
@@ -1302,7 +1360,7 @@ Transform:
   - {fileID: 1417247682}
   - {fileID: 1196009127}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &722833236
 Rigidbody:
@@ -1332,6 +1390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353c9e3cf8199f54f91dad2b68cba4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plusOneText: {fileID: 4762738211263649242, guid: 7215ff8bb3171ac42ad66d0b2bec1698, type: 3}
 --- !u!114 &722833238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1654,7 +1713,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &860995279
 GameObject:
@@ -2076,7 +2135,7 @@ RectTransform:
   m_Children:
   - {fileID: 352901024}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2312,7 +2371,7 @@ RectTransform:
   - {fileID: 1096812}
   - {fileID: 1747773548}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2704,6 +2763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b428c7ba0b745348949e5e0a15fbfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreTime: 0
   isGameStarted: 0
   isGameActive: 0
   isGameOver: 0
@@ -2731,7 +2791,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1705338843
 PrefabInstance:
@@ -2858,7 +2918,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747773547
 GameObject:
@@ -3022,7 +3082,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1826066836
 MonoBehaviour:
@@ -3040,6 +3100,7 @@ MonoBehaviour:
   gameTheme: {fileID: 8300000, guid: 3480634672ebbfa4799eb22cdd87bf24, type: 3}
   invencibilityTheme: {fileID: 8300000, guid: ada97d3ff8501ca49b17acd500260256, type: 3}
   gameoverSound: {fileID: 8300000, guid: 58c89b5dfe91a9f4cb9addfecb02a8d3, type: 3}
+  smallExplosionSound: {fileID: 8300000, guid: 98a0cef93f5dba84980425d621619df0, type: 3}
   bpm: 180.738
 --- !u!82 &1826066837
 AudioSource:
