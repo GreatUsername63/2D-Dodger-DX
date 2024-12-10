@@ -2719,6 +2719,8 @@ MonoBehaviour:
   gameOverMessage: {fileID: 692464403}
   finalScoreText: {fileID: 511185594}
   highScoreText: {fileID: 2006142329}
+  playerBlue: {fileID: 481411505}
+  playerRed: {fileID: 722833231}
   bpm: 180.738
   offset: 0
   timeBeforeSongStart: 0.5
