@@ -180,12 +180,12 @@ public class GameManager : MonoBehaviour
     void setGameoverMessage()
     {
         gameOverMessage.text = "You've lost on purpose didn't you";
-        if (scoreTime > 2) gameOverMessage.text = "Yep, this is going to be hard";
+        if (scoreTime > 1) gameOverMessage.text = "Yep, this is going to be hard";
         if (scoreTime > 10) gameOverMessage.text = "Let's go you can do it!";
-        if (scoreTime > 30) gameOverMessage.text = "You've pretty much destroyed my score at this point";
-        if (scoreTime > 60) gameOverMessage.text = "You're  real 2d master";
-        if (scoreTime > 120) gameOverMessage.text = "No way can you keep playing";
-        if (scoreTime > 180) gameOverMessage.text = "HOW?????????????";
+        if (scoreTime > 70) gameOverMessage.text = "You've pretty much destroyed my score at this point";
+        if (scoreTime > 180) gameOverMessage.text = "You're  real 2d master";
+        if (scoreTime > 240) gameOverMessage.text = "No way can you keep playing";
+        if (scoreTime > 360) gameOverMessage.text = "HOW?????????????";
     }
 
     //Ship: false equals X grabbed the powerup, true equals Y
