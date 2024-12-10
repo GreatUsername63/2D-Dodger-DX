@@ -1638,8 +1638,8 @@ MonoBehaviour:
   bigRoidRed: {fileID: 8548029919295678986, guid: 9a0b7c8e7c1ae9247925f7e4e76068d2, type: 3}
   smallRoidBlue: {fileID: 7486465405720402559, guid: 1376e7f92b39a4543989f8cabce0f4c8, type: 3}
   bigRoidBlue: {fileID: 4675164434766232501, guid: 126a52c3d86f3744683a83f0146de1bc, type: 3}
-  powerupRed: {fileID: 549051600903863716, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
-  powerupBlue: {fileID: 2709755310638742531, guid: a9bbc2700be3f1043a02ccbeb5c9ac59, type: 3}
+  powerupRed: {fileID: 2709755310638742531, guid: a9bbc2700be3f1043a02ccbeb5c9ac59, type: 3}
+  powerupBlue: {fileID: 549051600903863716, guid: 984f8f2633007194d931316a902cc6b2, type: 3}
   redCount: 0
   blueCount: 0
   totalCount: 0
