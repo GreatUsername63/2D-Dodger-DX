@@ -17,8 +17,8 @@ public class MoveBlue : MonoBehaviour
             speed += 8f;
         }
 
-        spawnerReference = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        spawnerReference = SpawnManager.Instance;
+        gameManager = GameManager.Instance;
     }
 
     // Update is called once per frame

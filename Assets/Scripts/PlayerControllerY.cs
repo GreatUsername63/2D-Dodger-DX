@@ -17,9 +17,9 @@ public class PlayerControllerY : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        gameManager = GameManager.Instance;
+        spawnManager = SpawnManager.Instance;
+        audioManager = AudioManager.Instance;
         invecibilityScript = GetComponent<Invecibility>();
     }
 

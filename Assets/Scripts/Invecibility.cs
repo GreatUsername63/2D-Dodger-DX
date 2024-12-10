@@ -47,7 +47,7 @@ public class Invecibility : MonoBehaviour
 
         originalLinerendererGradient = lineRenderer1.colorGradient;
 
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager = AudioManager.Instance;
     }
 
     // Update is called once per frame

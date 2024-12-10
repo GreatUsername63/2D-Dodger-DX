@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
 
     //Player references
     [Header("Player references")]
-    GameObject playerBlue;
-    GameObject playerRed;
+    [SerializeField] GameObject playerBlue;
+    [SerializeField] GameObject playerRed;
 
     //Audio
     [Header("Audio and rhythm")]
@@ -46,14 +46,28 @@ public class GameManager : MonoBehaviour
     bool countDownOver = false;
     bool rhythmInitialized = false;
 
+    //Singleton
+    public static GameManager Instance;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        playerBlue = GameObject.Find("Player blue");
-        playerRed = GameObject.Find("Player red");
+        spawnManager = SpawnManager.Instance;
         gameoverAnimator = gameoverAssets.GetComponent<Animator>();
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager = AudioManager.Instance;
     }
 
     // Update is called once per frame

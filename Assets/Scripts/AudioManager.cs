@@ -12,9 +12,22 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip smallExplosionSound;
     public float bpm = 180.738f;
     float beatTime;
+
+    //Singleton
+    public static AudioManager Instance;
+
     // Start is called before the first frame update
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         audioSource = gameObject.GetComponent<AudioSource>();
         beatTime = 60 / bpm;
         isGameOver = false;

@@ -21,6 +21,21 @@ public class SpawnManager : MonoBehaviour
     private float spawnRange = 7.5f;
     public bool isSpawnerActive = true;
 
+    //Singleton
+    public static SpawnManager Instance;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
