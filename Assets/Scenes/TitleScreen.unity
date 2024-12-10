@@ -612,7 +612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: By GreatUsername63 2019-2024
+  m_text: By GreatUsername63 in 2024
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04bbb8bb4c11d734a9f49c128a0663bf, type: 2}
   m_sharedMaterial: {fileID: 7716258592007294571, guid: 04bbb8bb4c11d734a9f49c128a0663bf, type: 2}
